@@ -126,7 +126,6 @@ class TD_wishlists
         ) DEFAULT CHARSET=utf8";        
         
         
-//        require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
         $wpdb->query( $WishlistSql );
         $wpdb->query( $WishlistItemsSql );
     }  
@@ -146,14 +145,12 @@ class TD_wishlists
             $outputHTML .= '</div';
            
             $wishlists = $this->TD_getWishLists();
-error_log('--------$wishlists---------'); 
-error_log($wishlists);            
+            
             $resultrecord;
+            
             foreach($wishlists as $wishlist) {
                 $resultrecord = $wishlist;
-            }
-error_log('--------$resultrecord---------');
-error_log($resultrecord);            
+            }       
             
         } else {
             $outputHTML .= 'You need to be logged in to use wishlists';
